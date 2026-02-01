@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wechselkurs Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div>
+                <h1>Wechselkurs Marktmodell</h1>
+                <p style="font-size: 0.9rem">Simulieren Sie Ceteris Paribus Szenarien</p>
+            </div>
+            <div class="rate-display-header">
+                <span class="label">Aktueller Kurs:</span>
+                <span class="value" id="currentRate">1.00 $/€</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="card display-area">
+                <div class="chart-container">
+                    <canvas id="marketChart"></canvas>
+                </div>
+            </section>
+
+            <section class="card controls-area">
+                <!-- Task Section -->
+                <div class="task-panel">
+                    <div class="task-header">
+                        <h3>Aufgabe <span id="taskCounter">1</span>/5</h3>
+                        <button id="nextTaskBtn" class="btn-secondary">Weiter</button>
+                    </div>
+                    <p id="taskDescription" class="task-text">Lädt...</p>
+                    <div id="taskFeedback" class="task-feedback"></div>
+                </div>
+
+                <!-- Controls -->
+                <div class="control-group demand-group">
+                    <h2>Nachfrage (D)</h2>
+                    <p>Verschiebung der Nachfragekurve</p>
+                    <div class="slider-container">
+                        <label>Sinken <span>Steigen</span></label>
+                        <input type="range" id="demandSlider" min="-50" max="50" value="0">
+                    </div>
+                </div>
+
+                <div class="control-group supply-group">
+                    <h2>Angebot (S)</h2>
+                    <p>Verschiebung der Angebotskurve</p>
+                    <div class="slider-container">
+                        <label>Sinken <span>Steigen</span></label>
+                        <input type="range" id="supplySlider" min="-50" max="50" value="0">
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h3>Analyse</h3>
+                    <p id="analysisText">Markt im Gleichgewicht.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
