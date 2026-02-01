@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wechselkurs Simulation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Wechselkurs Marktmodell</h1>
+            <p>Simulieren Sie Angebot und Nachfrage am Devisenmarkt</p>
+        </header>
+
+        <main>
+            <section class="card display-area">
+                <div class="chart-container">
+                    <canvas id="marketChart"></canvas>
+                    <div class="equilibrium-label" id="equilibriumLabel">
+                        <span class="label">Gleichgewichtskurs:</span>
+                        <span class="value" id="currentRate">1.00</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card controls-area">
+                <div class="control-group demand-group">
+                    <h2>Nachfrage (D)</h2>
+                    <p>Verschiebung der Nachfragekurve</p>
+                    <div class="slider-container">
+                        <label for="demandSlider">Sinken <span>Steigen</span></label>
+                        <input type="range" id="demandSlider" min="-50" max="50" value="0">
+                    </div>
+                </div>
+
+                <div class="control-group supply-group">
+                    <h2>Angebot (S)</h2>
+                    <p>Verschiebung der Angebotskurve</p>
+                    <div class="slider-container">
+                        <label for="supplySlider">Sinken <span>Steigen</span></label>
+                        <input type="range" id="supplySlider" min="-50" max="50" value="0">
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h3>Marktanalyse</h3>
+                    <p id="analysisText">Der Markt ist im Gleichgewicht.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
